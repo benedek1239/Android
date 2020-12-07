@@ -15,10 +15,14 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        minSdkVersion 15
+        targetSdkVersion 28
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        dataBinding true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -60,4 +64,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    //for profile picture
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.android.support:multidex:1.0.3'
+
 }
+
