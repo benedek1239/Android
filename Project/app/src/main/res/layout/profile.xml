@@ -16,8 +16,7 @@
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-         />
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/user_profile_photo"
@@ -108,13 +107,36 @@
 
 
         </LinearLayout>
+
         <Button
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="188dp"
+            android:id="@+id/backButtonProfile"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:layout_above="@+id/user_profile_photo"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="135dp"
+            android:layout_marginLeft="5dp"
+            android:backgroundTint="#ebca0707"
             android:text="back"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/editButtonProfile"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:layout_above="@+id/user_profile_photo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="135dp"
+            android:backgroundTint="#ebca0707"
+            android:text="Edit"
+            android:textStyle="bold"/>
+
     </RelativeLayout>
 
 </ScrollView>
