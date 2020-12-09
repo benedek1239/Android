@@ -40,8 +40,6 @@
             android:elevation="4dp"
             android:paddingBottom="24dp">
 
-
-
             <TextView
                 android:id="@+id/user_profile_name"
                 android:layout_width="wrap_content"
@@ -134,7 +132,8 @@
             android:layout_marginBottom="135dp"
             android:backgroundTint="#ebca0707"
             android:text="Edit"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            />
 
     </RelativeLayout>
 
