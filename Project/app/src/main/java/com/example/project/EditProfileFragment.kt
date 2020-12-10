@@ -2,6 +2,7 @@ package com.example.project
 
 import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,17 +39,34 @@ class EditProfileFragment : Fragment() {
             //Kiolvasás a db bol
             list = AppDB.getDatabase(this.requireActivity().baseContext)!!.DAO()!!.getAll as List<Profile>
 
-            //Elemekhez stringek hozzácsatolása
-            userName.hint = list[0].name
-            address.hint = list[0].address
-            phoneNumber.hint = list[0].phone_number
-            email.hint = list[0].email
-        }
+            //változó, hogy tároljuk az utolsó indexet
+            val index = list.lastIndex
 
+            //Elemekhez stringek hozzácsatolása
+            userName.setText(list[index].name)
+            address.setText(list[index].address)
+            phoneNumber.setText(list[index].phone_number)
+            email.setText(list[index].email)
+        }
 
         //Vissza gomb deklarálása és listener hozzácsatolása
         val backBTN = root.findViewById<Button>(R.id.back_button_edit)
         backBTN.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
+        }
+
+        //mentés gomb deklarálása és listener hozzácsatolása
+        val saveBTN = root.findViewById<Button>(R.id.save_button_edit)
+        saveBTN.setOnClickListener { view : View ->
+            AsyncTask.execute{
+                //régi adatok törlése
+                list = AppDB.getDatabase(this.requireActivity().baseContext)!!.DAO()!!.getAll as List<Profile>
+                AppDB.getDatabase(this.requireActivity().baseContext)!!.DAO()!!.deleteById(list.lastIndex)
+
+                //új adatok bevitele
+                AppDB.getDatabase(this.requireActivity().baseContext)!!.DAO()!!.insertAll(Profile(userName.text.toString(), "https://support.hubstaff.com/wp-content/uploads/2019/08/good-pic.png", address.text.toString(), phoneNumber.text.toString(), email.text.toString()))
+            }
+            //vissza navigálás a profil fülbe
             view.findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
         }
 

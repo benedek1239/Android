@@ -2,7 +2,6 @@ package com.example.project
 
 import android.os.AsyncTask
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +13,7 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.project.localDB.AppDB
 import com.example.project.localDB.Profile
-import java.util.*
-import kotlin.concurrent.schedule
+
 
 class ProfileFragment: Fragment() {
     //Változók deklarálása
@@ -26,6 +24,7 @@ class ProfileFragment: Fragment() {
     private  lateinit var phoneNumber: TextView
     private  lateinit var email: TextView
     private var profilePicture = "";
+
 
     //Létrehozás után meghívódik
     override fun onCreateView(
@@ -47,20 +46,16 @@ class ProfileFragment: Fragment() {
             //Kiolvasás a db bol
             list = AppDB.getDatabase(this.requireActivity().baseContext)!!.DAO()!!.getAll as List<Profile>
 
-            //Elemekhez stringek hozzácsatolása
-            profilePicture = list[0].profile_picture
-            userName.text = list[0].name
-            address.text = "Cím: " + list[0].address
-            phoneNumber.text = "Telefon: " + list[0].phone_number
-            email.text = "E-mail: " + list[0].email
-        }
+            //változó, hogy tároljuk az utolsó indexet
+            val index = list.lastIndex
 
-        //Profilkép betöltése Glide segítségével
-        Glide.with(imageView)
-            .load(profilePicture)
-            .override(380, 580)
-            .placeholder(R.drawable.profile_circular_border_imageview)
-            .into(imageView)
+            //Elemekhez stringek hozzácsatolása
+            profilePicture = list[index].profile_picture
+            userName.text = list[index].name
+            address.text = "Cím: " + list[index].address
+            phoneNumber.text = "Telefon: " + list[index].phone_number
+            email.text = "E-mail: " + list[index].email
+        }
 
 
         //Vissza gomb deklarálása és listener hozzácsatolása
@@ -76,5 +71,15 @@ class ProfileFragment: Fragment() {
         }
 
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Profilkép betöltése Glide segítségével
+        Glide.with(imageView)
+                .load(profilePicture)
+                .override(380, 580)
+                .placeholder(R.drawable.profile_circular_border_imageview)
+                .into(imageView)
     }
 }
