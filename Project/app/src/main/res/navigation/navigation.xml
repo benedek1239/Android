@@ -44,9 +44,9 @@
 
     <fragment
         android:id="@+id/restaurantsFragment"
-        android:name="com.example.project.RestaurantsFragment"
+        android:name="com.example.project.RestaurantShowerFragment"
         android:label="RestaurantsFragment"
-        tools:layout="@layout/restaurants" >
+        tools:layout="@layout/restaurant_shower_fragment" >
     </fragment>
 
 </navigation>
