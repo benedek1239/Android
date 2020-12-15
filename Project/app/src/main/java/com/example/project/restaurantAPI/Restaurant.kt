@@ -1,4 +1,4 @@
-package com.example.project.API
+package com.example.project.restaurantAPI
 
 import com.squareup.moshi.Json
 

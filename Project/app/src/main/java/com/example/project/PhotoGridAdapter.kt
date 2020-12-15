@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.project.API.Restaurant
+import com.example.project.restaurantAPI.Restaurant
 import com.example.project.databinding.RestaurantViewBinding
 
 class PhotoGridAdapter :
@@ -31,8 +31,7 @@ class PhotoGridAdapter :
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): MarsPropertyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarsPropertyViewHolder {
         return MarsPropertyViewHolder(RestaurantViewBinding.inflate(LayoutInflater.from(parent.context)))
     }
 

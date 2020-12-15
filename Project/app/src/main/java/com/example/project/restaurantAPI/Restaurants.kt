@@ -1,4 +1,4 @@
-package com.example.project.API
+package com.example.project.restaurantAPI
 
 data class Restaurants(
     val page: Int,

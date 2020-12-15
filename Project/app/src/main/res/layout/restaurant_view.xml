@@ -6,7 +6,7 @@
     <data>
         <variable
             name="property"
-            type="com.example.project.API.Restaurant" />
+            type="com.example.project.restaurantAPI.Restaurant" />
     </data>
 
     <RelativeLayout
