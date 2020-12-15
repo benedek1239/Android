@@ -21,8 +21,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:padding="2dp"
-            app:imageUrl="@{property.imageUrl}"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            app:imageUrl="@{property.imageUrl}" />
 
         <TextView
             android:id="@+id/custom_list_item_text_view_name"
