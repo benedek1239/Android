@@ -1,5 +1,6 @@
 package com.example.project
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,11 +17,10 @@ class RestaurantShowerViewModel : ViewModel() {
     val status: LiveData<String>
         get() = _status
 
+    private val _properties = MutableLiveData<List<Restaurant>>()
 
-    private val _resInfo = MutableLiveData<List<Restaurant>>()
-    val resInfo: LiveData<List<Restaurant>>
-        get() = _resInfo
-
+    val properties: LiveData<List<Restaurant>>
+        get() = _properties
 
 
     private var job = Job()
@@ -35,10 +35,10 @@ class RestaurantShowerViewModel : ViewModel() {
         coroutineScope.launch {
             val getInformation = RestaurantsApi.retrofitService.getProperties()
             try {
-                val listResult = getInformation.await()
+                val mainRestaurantsList = getInformation.await()
 
-                if (listResult.restaurants.isNotEmpty()){
-                    _resInfo.value = listResult.restaurants
+                if (mainRestaurantsList.restaurants.size > 0){
+                    _properties.value = mainRestaurantsList.restaurants
                 }
             }catch (t: Exception){
                 _status.value = "Failure: "+ t.message

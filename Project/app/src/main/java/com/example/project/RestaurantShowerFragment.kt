@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.project.databinding.RestaurantShowerFragmentBinding
 import androidx.lifecycle.ViewModelProviders.of
+import com.example.project.PhotoGridAdapter
 
 class RestaurantShowerFragment : Fragment() {
 
@@ -26,12 +27,13 @@ class RestaurantShowerFragment : Fragment() {
         binding.setLifecycleOwner(this)
 
         binding.viewModel = viewModel
+
+        binding.photosGrid.adapter = PhotoGridAdapter()
         setHasOptionsMenu(true)
 
         return binding.root
 
     }
-
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
