@@ -9,9 +9,9 @@ import com.example.project.restaurantAPI.Restaurant
 import com.example.project.databinding.RestaurantViewBinding
 
 class PhotoGridAdapter :
-    ListAdapter<Restaurant, PhotoGridAdapter.MarsPropertyViewHolder>(DiffCallback) {
+    ListAdapter<Restaurant, PhotoGridAdapter.RestaurantPropertyViewHolder>(DiffCallback) {
 
-    class MarsPropertyViewHolder(private var binding: RestaurantViewBinding):
+    class RestaurantPropertyViewHolder(private var binding: RestaurantViewBinding):
         RecyclerView.ViewHolder(binding.root) {
         fun bind(restaurantProperty: Restaurant) {
             binding.property = restaurantProperty
@@ -31,11 +31,11 @@ class PhotoGridAdapter :
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarsPropertyViewHolder {
-        return MarsPropertyViewHolder(RestaurantViewBinding.inflate(LayoutInflater.from(parent.context)))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantPropertyViewHolder {
+        return RestaurantPropertyViewHolder(RestaurantViewBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
-    override fun onBindViewHolder(holder: MarsPropertyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RestaurantPropertyViewHolder, position: Int) {
         val restaurantProperty = getItem(position)
         holder.bind(restaurantProperty)
     }

@@ -9,13 +9,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-enum class MarsApiStatus { LOADING, ERROR, DONE }
+enum class RestaurantsApiStatus { ERROR, DONE }
 
 class RestaurantShowerViewModel : ViewModel() {
 
-    private val _status = MutableLiveData<MarsApiStatus>()
+    private val _status = MutableLiveData<RestaurantsApiStatus>()
 
-    val status: LiveData<MarsApiStatus>
+    val status: LiveData<RestaurantsApiStatus>
         get() = _status
 
     private val _properties = MutableLiveData<List<Restaurant>>()
@@ -38,13 +38,13 @@ class RestaurantShowerViewModel : ViewModel() {
             try {
                 val mainRestaurantsList = getInformation.await()
 
-                _status.value = MarsApiStatus.DONE
+                _status.value = RestaurantsApiStatus.DONE
 
                 if (mainRestaurantsList.restaurants.size > 0){
                     _properties.value = mainRestaurantsList.restaurants
                 }
             }catch (t: Exception){
-                _status.value = MarsApiStatus.ERROR
+                _status.value = RestaurantsApiStatus.ERROR
             }
         }
     }
