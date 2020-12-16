@@ -22,9 +22,9 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/main_photo_image"
+                android:id="@+id/restaurant_detail_image"
                 android:layout_width="0dp"
-                android:layout_height="266dp"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{viewModel.selectedProperty.imageUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -32,28 +32,123 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/property_type_text"
+                android:id="@+id/restaurant_detail_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@{viewModel.selectedProperty.name}"
-                android:textColor="#de000000"
-                android:textSize="39sp"
+                android:textSize="28sp"
+                android:textColor="#ebca0707"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_image"
                 tools:text="Restaurant name" />
 
             <TextView
-                android:id="@+id/price_value_text"
+                android:id="@+id/restaurant_detail_address_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@{viewModel.selectedProperty.address}"
-                android:textColor="#de000000"
+                android:text="Cím: "
                 android:textSize="20sp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/property_type_text"
-                tools:text="Adress" />
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_name" />
+
+            <TextView
+                android:id="@+id/restaurant_detail_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedProperty.address}"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/restaurant_detail_address_title"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_name"
+                tools:text="Address" />
+
+            <TextView
+                android:id="@+id/restaurant_detail_city_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Város: "
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_address"/>
+
+            <TextView
+                android:id="@+id/restaurant_detail_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedProperty.city}"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/restaurant_detail_city_title"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_address"
+                tools:text="City: " />
+
+            <TextView
+                android:id="@+id/restaurant_detail_country_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ország: "
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_city"/>
+
+            <TextView
+                android:id="@+id/restaurant_detail_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedProperty.country}"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/restaurant_detail_country_title"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_city"
+                tools:text="Country" />
+
+            <TextView
+                android:id="@+id/restaurant_detail_phone_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telefon szám: "
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_country"/>
+
+            <TextView
+                android:id="@+id/restaurant_detail_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedProperty.phone}"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/restaurant_detail_phone_title"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_country"
+                tools:text="Phone" />
+
+            <TextView
+                android:id="@+id/restaurant_detail_price_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foglalás: "
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone"/>
+
+            <TextView
+                android:id="@+id/restaurant_detail_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedProperty.reserve_url}"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/restaurant_detail_price_title"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone"
+                tools:text="Reserve" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
