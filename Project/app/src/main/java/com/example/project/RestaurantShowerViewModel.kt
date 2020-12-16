@@ -23,6 +23,9 @@ class RestaurantShowerViewModel : ViewModel() {
     val properties: LiveData<List<Restaurant>>
         get() = _properties
 
+    private val _navigateToSelectedProperty = MutableLiveData<Restaurant>()
+    val navigateToSelectedProperty : LiveData<Restaurant>
+        get() = _navigateToSelectedProperty
 
     private var job = Job()
     private val coroutineScope = CoroutineScope(job + Dispatchers.Main)
@@ -52,5 +55,13 @@ class RestaurantShowerViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         job.cancel()
+    }
+
+    fun displayPropertyDetails(restaurantproperty: Restaurant){
+        _navigateToSelectedProperty.value = restaurantproperty
+    }
+
+    fun displayPropertyDetailsComplete(){
+        _navigateToSelectedProperty.value = null
     }
 }

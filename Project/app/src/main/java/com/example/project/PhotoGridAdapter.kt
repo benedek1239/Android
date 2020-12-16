@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.project.restaurantAPI.Restaurant
 import com.example.project.databinding.RestaurantViewBinding
 
-class PhotoGridAdapter :
+class PhotoGridAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<Restaurant, PhotoGridAdapter.RestaurantPropertyViewHolder>(DiffCallback) {
 
     class RestaurantPropertyViewHolder(private var binding: RestaurantViewBinding):
@@ -37,6 +37,9 @@ class PhotoGridAdapter :
 
     override fun onBindViewHolder(holder: RestaurantPropertyViewHolder, position: Int) {
         val restaurantProperty = getItem(position)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(restaurantProperty)
+        }
         holder.bind(restaurantProperty)
     }
 
@@ -49,11 +52,11 @@ class PhotoGridAdapter :
     }
     holder.bind(restaurantProperty)
     }
-
+     */
 
     class OnClickListener(val clickListener: (restaurantProperty:Restaurant) -> Unit) {
-    fun onClick(restaurantProperty:Restaurant) = clickListener(restaurantProperty)
+        fun onClick(restaurantProperty:Restaurant) = clickListener(restaurantProperty)
     }
-     */
+
 
 }

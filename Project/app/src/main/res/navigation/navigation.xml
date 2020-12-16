@@ -47,6 +47,19 @@
         android:name="com.example.project.RestaurantShowerFragment"
         android:label="RestaurantsFragment"
         tools:layout="@layout/restaurant_shower_fragment" >
+        <action
+            android:id="@+id/action_showDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.project.detail.DetailFragment"
+        android:label="RestaurantsDetail"
+        tools:layout="@layout/restaurant_detail" >
+        <argument
+            android:name="selectedProperty"
+            app:argType="com.example.project.restaurantAPI.Restaurant"/>
     </fragment>
 
 </navigation>

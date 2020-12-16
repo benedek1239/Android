@@ -1,7 +1,10 @@
 package com.example.project.restaurantAPI
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Restaurant(
     val address: String,
     val area: String,
@@ -18,4 +21,4 @@ data class Restaurant(
     val price: Int,
     val reserve_url: String,
     val state: String
-)
+) : Parcelable
