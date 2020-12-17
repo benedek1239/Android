@@ -26,7 +26,7 @@ class MainMenuFragment : Fragment() {
         }
 
         restaurantBTN.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_mainMenuFragment_to_restaurantsFragment)
+            view.findNavController().navigate(R.id.action_mainMenuFragment_to_splashScreenFragment)
         }
 
         return root

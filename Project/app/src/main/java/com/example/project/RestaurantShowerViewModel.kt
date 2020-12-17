@@ -13,6 +13,8 @@ enum class RestaurantsApiStatus { ERROR, DONE }
 
 class RestaurantShowerViewModel : ViewModel() {
 
+    var restaurantsReady : MutableLiveData<Boolean> = MutableLiveData()
+
     private val _status = MutableLiveData<RestaurantsApiStatus>()
 
     val status: LiveData<RestaurantsApiStatus>
@@ -35,13 +37,15 @@ class RestaurantShowerViewModel : ViewModel() {
         getRestaurantsProperties()
     }
 
-    private fun getRestaurantsProperties() {
+    public fun getRestaurantsProperties() {
         coroutineScope.launch {
             val getInformation = RestaurantsApi.retrofitService.getProperties()
             try {
                 val mainRestaurantsList = getInformation.await()
 
                 _status.value = RestaurantsApiStatus.DONE
+
+                restaurantsReady.postValue(true);
 
                 if (mainRestaurantsList.restaurants.size > 0){
                     _properties.value = mainRestaurantsList.restaurants

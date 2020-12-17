@@ -44,15 +44,6 @@ class PhotoGridAdapter(private val onClickListener: OnClickListener) :
     }
 
 
-    /**
-    override fun onBindViewHolder(holder: MarsPropertyViewHolder, position: Int) {
-    val restaurantProperty = getItem(position)
-    holder.itemView.setOnClickListener {
-    onClickListener.onClick(restaurantProperty)
-    }
-    holder.bind(restaurantProperty)
-    }
-     */
 
     class OnClickListener(val clickListener: (restaurantProperty:Restaurant) -> Unit) {
         fun onClick(restaurantProperty:Restaurant) = clickListener(restaurantProperty)

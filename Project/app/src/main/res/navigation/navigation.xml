@@ -15,8 +15,9 @@
             android:id="@+id/action_mainMenuFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
-            android:id="@+id/action_mainMenuFragment_to_restaurantsFragment"
-            app:destination="@id/restaurantsFragment" />
+            android:id="@+id/action_mainMenuFragment_to_splashScreenFragment"
+            app:destination="@id/splashScreenFragment" />
+
     </fragment>
 
     <fragment
@@ -40,6 +41,16 @@
         <action
             android:id="@+id/action_editProfileFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.project.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_restaurantsFragment"
+            app:destination="@id/restaurantsFragment" />
     </fragment>
 
     <fragment
