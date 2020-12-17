@@ -13,13 +13,13 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="267" />
-                            <option name="y" value="311" />
+                            <option name="x" value="319" />
+                            <option name="y" value="334" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_restaurantsFragment_to_detailFragment">
+                            <entry key="action_detailFragment_to_restaurantsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -34,8 +34,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="228" />
-                            <option name="y" value="-63" />
+                            <option name="x" value="289" />
+                            <option name="y" value="-72" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -81,8 +81,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="5" />
-                            <option name="y" value="-65" />
+                            <option name="x" value="20" />
+                            <option name="y" value="-60" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -113,7 +113,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_restaurantsFragment_to_detailFragment">
+                            <entry key="action_showDetail">
                               <value>
                                 <LayoutPositions />
                               </value>

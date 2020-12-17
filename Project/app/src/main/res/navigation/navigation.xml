@@ -60,6 +60,9 @@
         <argument
             android:name="selectedProperty"
             app:argType="com.example.project.restaurantAPI.Restaurant"/>
+        <action
+            android:id="@+id/action_detailFragment_to_restaurantsFragment"
+            app:destination="@id/restaurantsFragment" />
     </fragment>
 
 </navigation>
