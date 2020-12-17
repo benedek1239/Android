@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_showDetail"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_restaurantFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
 
     <fragment

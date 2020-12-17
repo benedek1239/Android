@@ -3,5 +3,6 @@
     <string name="profile">Profile</string>
     <string name="restaurants">Restaurants</string>
     <string name="title">Where to eat?!</string>
+    <string name="back">Back</string>
 
 </resources>

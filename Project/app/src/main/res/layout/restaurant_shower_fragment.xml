@@ -47,6 +47,19 @@
             tools:itemCount="16"
             tools:listitem="@layout/restaurant_view" />
 
+        <Button
+            android:id="@+id/backButtonRestaurants"
+            android:layout_width="85dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#ebca0707"
+            android:text="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
