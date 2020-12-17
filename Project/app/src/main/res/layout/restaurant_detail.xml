@@ -19,7 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="20dp">
 
             <ImageView
                 android:id="@+id/restaurant_detail_image"
@@ -127,27 +127,45 @@
                 app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_country"
                 tools:text="Phone" />
 
-            <TextView
-                android:id="@+id/restaurant_detail_price_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Foglalás: "
-                android:textSize="20sp"
-                android:layout_marginTop="8dp"
+            <ImageButton
+                android:id="@+id/cancel_button_detail"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="22dp"
+                android:src="@mipmap/back_icon"
+                android:background="@drawable/roundcorner"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone"/>
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone_title"
+                app:layout_constraintVertical_bias="0.238" />
 
-            <TextView
-                android:id="@+id/restaurant_detail_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{viewModel.selectedProperty.reserve_url}"
-                android:layout_marginTop="8dp"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/restaurant_detail_price_title"
-                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone"
-                tools:text="Reserve" />
+            <ImageButton
+                android:id="@+id/phone_button_detail"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginLeft="45dp"
+                android:background="@drawable/roundcorner"
+                android:src="@mipmap/phone_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cancel_button_detail"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone_title"
+                app:layout_constraintVertical_bias="0.247" />
 
+            <ImageButton
+                android:id="@+id/map_button_detail"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginLeft="45dp"
+                android:background="@drawable/roundcorner"
+                android:src="@mipmap/map_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/phone_button_detail"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_detail_phone_title"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
