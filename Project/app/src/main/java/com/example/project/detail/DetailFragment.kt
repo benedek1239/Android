@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.navigation.findNavController
@@ -46,19 +47,24 @@ class DetailFragment : Fragment() {
         //hívás gomb deklarálása és click listener hozzá csatolása
         val phoneBTN = binding.root.findViewById<ImageButton>(R.id.phone_button_detail)
         phoneBTN.setOnClickListener { view : View ->
+            //Étterem hívása
             val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "${phoneNumber.text}"))
             requireContext().startActivity(intent)
         }
 
         //koordináták kiszedése a view ből
-        //val latitude = binding.root.findViewById<TextView>(R.id.restaurant_detail_lat)
-       // val longitude = binding.root.findViewById<TextView>(R.id.restaurant_detail_lng)
+        val latitude = binding.root.findViewById<TextView>(R.id.restaurant_detail_lat)
+        val longitude = binding.root.findViewById<TextView>(R.id.restaurant_detail_lng)
 
         //térkép gomb deklarálása és click listener hozzá csatolása
         val mapBTN = binding.root.findViewById<ImageButton>(R.id.map_button_detail)
         mapBTN.setOnClickListener { view : View ->
-           // Log.d("Latitude: ", "${latitude.value}")
-           // Log.d("Longitude: ", "${longitude.value}")
+
+            //Étterem mutatása a térképen
+            val gmmIntentUri = Uri.parse("geo:${latitude.text},${longitude.text}")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            requireContext().startActivity(mapIntent)
         }
 
         return binding.root
