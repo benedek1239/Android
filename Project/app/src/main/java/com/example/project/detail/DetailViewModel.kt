@@ -7,18 +7,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.project.restaurantAPI.Restaurant
 
-/**
- *  The [ViewModel] associated with the [DetailFragment], containing information about the selected
- *  [MarsProperty].
- */
+//Információkat tartalmaz a kiválasztott étteremről
 class DetailViewModel(restaurantProperty: Restaurant, app: Application) : AndroidViewModel(app) {
     private val _selectedProperty = MutableLiveData<Restaurant>()
 
-    // The external LiveData for the SelectedProperty
+    //A külső LiveData
     val selectedProperty: LiveData<Restaurant>
         get() = _selectedProperty
 
-    // Initialize the _selectedProperty MutableLiveData
+    //A választott étterem inicializálása
     init {
         _selectedProperty.value = restaurantProperty
     }

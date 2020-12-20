@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = binding.drawerLayout
 
+        //Navigáció deklarálása
         val navController = this.findNavController(R.id.myNavHostFragment)
 
         NavigationUI.setupActionBarWithNavController(this,navController, drawerLayout)
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.navView, navController)
 
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)

@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//Profil class
 @Entity
 class Profile(
     @ColumnInfo(name = "name") var name: String,

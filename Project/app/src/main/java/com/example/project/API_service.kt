@@ -9,6 +9,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
+//Éttermek API adatbázisának lekérése
+
 private const val BASE_URL = "https://ratpark-api.imok.space/"
 
 

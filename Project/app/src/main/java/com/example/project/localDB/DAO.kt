@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 
+//Lekérdezések irása az lokális adatbázishoz
 @Dao
 interface DAO {
     @get:Query("SELECT * FROM Profile")

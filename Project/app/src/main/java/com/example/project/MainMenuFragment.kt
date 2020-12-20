@@ -17,13 +17,15 @@ class MainMenuFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.main_menu, container, false)
 
+        //Profile fül gomb deklarálása és click listener hozzácsatolása
         val profileBTN = root.findViewById<Button>(R.id.profileButton)
-
-        val restaurantBTN = root.findViewById<Button>(R.id.restaurantsButton)
 
         profileBTN.setOnClickListener { view : View ->
             view.findNavController().navigate(R.id.action_mainMenuFragment_to_profileFragment)
         }
+
+        //Éttermek fül gomb deklarálása és click listener hozzácsatolása
+        val restaurantBTN = root.findViewById<Button>(R.id.restaurantsButton)
 
         restaurantBTN.setOnClickListener { view : View ->
             view.findNavController().navigate(R.id.action_mainMenuFragment_to_splashScreenFragment)

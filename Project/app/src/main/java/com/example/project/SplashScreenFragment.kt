@@ -22,19 +22,20 @@ class SplashScreenFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.splash_screen, container, false)
 
+        //A RestaurantShowerViewModel class példányának megszerzése
         activity?.let {
             RestaurantShower = ViewModelProvider(it).get(RestaurantShowerViewModel::class.java)
         }
 
         RestaurantShower.getRestaurantsProperties()
 
+        //A RestaurantShower restaurantsReady változójának figyelése és ha változik akkor splash screen elhagyása
         RestaurantShower.restaurantsReady.observe(viewLifecycleOwner, Observer { res ->
             if (res) {
                view?.findNavController()?.navigate(R.id.action_splashScreenFragment_to_restaurantsFragment)
             }
 
         })
-
 
         return root
     }

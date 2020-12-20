@@ -18,6 +18,7 @@ abstract class AppDB : RoomDatabase() {
         val databaseWriteExecutor: ExecutorService =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS)
 
+        //Adatbázis építése ls visszaküldése
         fun getDatabase(context: Context): AppDB? {
             if (INSTANCE == null) {
                 synchronized(AppDB::class.java) {

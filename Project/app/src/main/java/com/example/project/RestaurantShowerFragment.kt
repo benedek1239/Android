@@ -32,12 +32,15 @@ class RestaurantShowerFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
 
+        //Lehetővé teszi a binfing számára a LiveData megfigyelését
         binding.viewModel = viewModel
 
+        //Tudassa a viewModel-el amikor a property re klikkeltek
         binding.photosGrid.adapter = PhotoGridAdapter(PhotoGridAdapter.OnClickListener{
             viewModel.displayPropertyDetails(it)
         })
 
+        //Figyeli a  LiveData -t és navigál ha nem null
         viewModel.navigateToSelectedProperty.observe(this, Observer {
             if(null != it){
                 this.findNavController().navigate(RestaurantShowerFragmentDirections.actionShowDetail(it))
